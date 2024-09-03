@@ -1,0 +1,53 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+void printDice(int roll) {
+    switch (roll) {
+        case 1:
+            std::cout << " _______\n";
+            std::cout << "|       |\n";
+            std::cout << "|   o   |\n";
+            std::cout << "|_______|\n";
+            break;
+        case 2:
+            std::cout << " _______\n";
+            std::cout << "| o     |\n";
+            std::cout << "|       |\n";
+            std::cout << "|____o_|\n";
+            break;
+        case 3:
+            std::cout << " _______\n";
+            std::cout << "| o     |\n";
+            std::cout << "|   o   |\n";
+            std::cout << "|____o_|\n";
+            break;
+        case 4:
+            std::cout << " _______\n";
+            std::cout << "| o   o |\n";
+            std::cout << "|       |\n";
+            std::cout << "| o   o_|\n";
+            break;
+        case 5:
+            std::cout << " _______\n";
+            std::cout << "| o   o |\n";
+            std::cout << "|   o   |\n";
+            std::cout << "| o   o_|\n";
+            break;
+        case 6:
+            std::cout << " _______\n";
+            std::cout << "| o   o |\n";
+            std::cout << "| o   o |\n";
+            std::cout << "| o   o_|\n";
+            break;
+    }
+}
+
+int main() {
+    srand(static_cast<unsigned int>(time(0))); // seed random number generator
+    int diceRoll = (rand() % 6) + 1; // generate random number between 1 and 6
+    std::cout << "Rolling the dice...\n";
+    std::cout << "The result is:\n";
+    printDice(diceRoll);
+    return 0;
+}
