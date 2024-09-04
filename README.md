@@ -9,6 +9,7 @@ Este é um projeto para recriar o famoso mini-jogo Knucklebones do jogo Cult of 
 
 - Cada jogador tem um tabuleiro 3x3.
 - No seu turno, você rola um dado de 6 lados e escolhe em qual coluna colocá-lo.
+  
 **Multiplicação dos Pontos:**
 
 Quer pontos? Coloque dados iguais na mesma coluna para multiplicar sua pontuação!
@@ -19,11 +20,14 @@ Quer pontos? Coloque dados iguais na mesma coluna para multiplicar sua pontuaç�
 
 Achou que só precisa focar em você? Errado!
 Se você colocar um dado com o mesmo número de um dado do oponente, o dado dele é destruído. BOOM! 💥
+
 **O Fim do Jogo:**
 
 O jogo termina quando o tabuleiro de um jogador estiver cheio.
 Quem tiver a maior pontuação vence a partida e ganha o título de Mestre dos Dados! 👑🎲
+
 **🎯 Objetivo**
+
 Encher o seu tabuleiro com a maior pontuação possível enquanto elimina os dados do adversário. Estratégia, sorte e um pouco de maldade são a receita para o sucesso!
 
 ## 🤖 Sobre o Código
