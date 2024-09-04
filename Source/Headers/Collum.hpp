@@ -4,14 +4,16 @@
 using namespace std;
 class Collum
 {
-    vector<int> collum;
     int nElements;
+    int Sum;
 
     void Rearange();
 public:
+    vector<int> collum;
     Collum();
     bool IsFull();
     void addElem(int Elem);
     void RemoveElem(int Elem);
     void PrintCollum();
+    int CalculateSum();
 };

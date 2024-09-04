@@ -3,17 +3,12 @@
 #include "../Headers/Collum.hpp"
 using namespace std;
 
-Collum::Collum() : nElements(0) {
-    // Initialize the collum array or any other necessary setup
-    collum.resize(3);
+Collum::Collum() : nElements(0), Sum(0) {
+    collum.resize(3, 0);  // Inicializar com zeros
 }
 
 bool Collum::IsFull() {
-    if(nElements == 3) {
-        return true;
-    } else {
-        return false;
-    }
+    return nElements == 3;
 }
 
 void Collum::addElem(int Elem) {
@@ -22,6 +17,7 @@ void Collum::addElem(int Elem) {
             if(collum[i] == 0) {
                 collum[i] = Elem;
                 nElements++;
+                CalculateSum();
                 break;
             }
         }
@@ -36,22 +32,26 @@ void Collum::RemoveElem(int Elem) {
                 nElements--;
             }
         }
+        CalculateSum();
         Rearange();
     }
 }
 
-/*função responsável por realocar números caso algum tenha sido removido*/
 void Collum::Rearange() {
-    int i,j;
-    for(i = 0; i < 3; i++) {
-        for(j = 0; j < 3; j++) {
-            if(collum[j] != 0) {
-                if(collum[j+1] == 0) {
-                    collum[j+1] = collum[j];
-                    collum[j] = 0;
-                }
-            }
+    vector<int> temp;
+    
+    // Coleta os elementos não zero
+    for(int i = 0; i < 3; i++) {
+        if(collum[i] != 0) {
+            temp.push_back(collum[i]);
         }
+    }
+
+    // Limpa a coluna e re-insere os elementos alinhados ao final
+    fill(collum.begin(), collum.end(), 0);
+    int index = 2;
+    for(int i = temp.size() - 1; i >= 0; i--) {
+        collum[index--] = temp[i];
     }
 }
 
@@ -61,4 +61,28 @@ void Collum::PrintCollum() {
         cout << " ";
     }
     cout << endl;
+}
+
+int Collum::CalculateSum() {
+    vector<int> Marks(6, 0);
+    Sum = 0;
+
+    for(int i = 0; i < 3; i++) {
+        if(collum[i] != 0) {
+            Marks[collum[i] - 1]++;
+        }
+    }
+
+    for(int i = 0; i < 6; i++) {
+        if(Marks[i] != 0) {
+            if(Marks[i] == 3) {
+                Sum += (i + 1) * 9; 
+            } else if(Marks[i] == 2) {
+                Sum += (i + 1) * 4; 
+            } else {
+                Sum += i + 1; 
+            }
+        }
+    }
+    return Sum;
 }
