@@ -16,6 +16,7 @@ Quer pontos? Coloque dados iguais na mesma coluna para multiplicar sua pontuaç�
 - Um dado = o valor dele.
 - Dois dados iguais = valor x 2.
 - Três dados iguais = valor x 3. Fácil, né?
+  
 **Sabotagem!:**
 
 Achou que só precisa focar em você? Errado!
