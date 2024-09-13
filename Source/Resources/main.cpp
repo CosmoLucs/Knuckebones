@@ -1,6 +1,6 @@
 //Pra rodar o código:
-// g++ -I../Headers -o test_program test.cpp Collum.cpp Board.cpp Game.cpp
-// ./test_program
+// g++ -I../Headers -o KnucklebonesGame main.cpp Collum.cpp Board.cpp Game.cpp
+// ./KnucklebonesGame
 
 #include <iostream>
 #include "../Headers/Game.hpp"
